@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nearby Place Search</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8"> 
+        <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 50%;
+      }
+    </style> 
+  </head>
+  <body>
+    <div id="location-list"> 
+        <h1>Petionville, Haiti</h1>
+        <!-- foreach tells ko that placelist is an array and to iterate over it. -->
+        <ul data-bind="foreach: placeList"> 
+            <li><span data-bind="text: $data.name"></span></li>
+        </ul>
+    </div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbEa7u4671tVj0iuhYNqY_azN8-iJuak4&signed_in=true&libraries=places&callback=initMap" async defer></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>
